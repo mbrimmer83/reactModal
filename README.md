@@ -5,7 +5,7 @@ number. After the changes were made the timeslot would turn red.
 <br>
 ##Technologies and Languages Used.
 Languages:<br>
-Javascript, HTML5, CSS3<br>
+Javascript, HTML5, CSS3, JSX, ES6<br>
 <br>
 Technologies:<br>
 Node.Js, React.JS Bootstrap-react<br>
