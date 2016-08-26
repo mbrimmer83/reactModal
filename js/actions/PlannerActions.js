@@ -1,7 +1,8 @@
-import dispatcher from "../dispather";
+import dispatcher from "../dispatcher";
 
-export function plannerModal() {
+export function plannerModal(data) {
   dispatcher.dispatch({
-    type: "OPEN_MODAL"
+    type: "UPDATE_STORE",
+    data: data
   });
 }

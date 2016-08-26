@@ -1,4 +1,6 @@
 import React from "react";
+import { EventEmitter } from "events";
+import dispatcher from "../dispatcher";
 
 import DailyStore from "../stores/DailyStore";
 
@@ -8,6 +10,10 @@ export default class Planner extends React.Component {
     this.state = {
       dailyPlanner: DailyStore.getDailyPlanner(),
     };
+  }
+  updateState(data) {
+    this.setState.dailyPlanner = data;
+    console.log("This happened!");
   }
 
   render() {
