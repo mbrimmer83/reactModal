@@ -8,7 +8,8 @@ Languages:<br>
 Javascript, HTML5, CSS3<br>
 <br>
 Technologies:<br>
-Node.Js, Angular.Js, Express, Bootstrap, MongoDB<br>
+Node.Js, React.JS Bootstrap-react<br>
+Flux Pattern concepts
 <br>
 
 ## Learning Outcomes
