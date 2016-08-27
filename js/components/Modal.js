@@ -33,6 +33,7 @@ export default class App extends React.Component {
   handleInputChange1(e) {
     var dailyP = this.state.dailyPlanner;
     dailyP[this.state.index].name = e.target.value;
+    dailyP[this.state.index].taken = false;
     this.setState({dailPlanner: dailyP});
   }
   handleInputChange2(e) {
@@ -41,7 +42,7 @@ export default class App extends React.Component {
     this.setState({dailPlanner: dailyP});
   }
   handleSaveClick() {
-    PlannerActions.plannerModal(this.dailyPlanner);
+    PlannerActions.plannerModal(this.state.dailyPlanner);
   }
 
   render() {
@@ -56,8 +57,10 @@ export default class App extends React.Component {
     }, this);
 
     return (
+      <div className="ModalDiv">
       <tbody>
       {DailyComponentsButtons}
+      </tbody>
       <div className='layout-page'>
         <main className='layout-main'>
           <div className='container'>
@@ -77,6 +80,7 @@ export default class App extends React.Component {
               </form>
              </ModalBody>
              <ModalFooter>
+              <h4>Please save your appointment</h4>
                <button className='btn btn-default' onClick={this.hideModal}>
                  Close
                </button>
@@ -88,7 +92,7 @@ export default class App extends React.Component {
          </div>
        </main>
      </div>
-     </tbody>
+     </div>
    );
  }
 }

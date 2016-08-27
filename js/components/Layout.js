@@ -19,7 +19,7 @@ export default class Layout extends React.Component {
     return (
       <div>
         <Header />
-          <table style={{display: 'inline-block'}}>
+          <table className="appTable">
             <Planner />
           </table>
           <table className="modalTable">

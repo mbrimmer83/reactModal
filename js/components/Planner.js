@@ -1,19 +1,32 @@
 import React from "react";
-import { EventEmitter } from "events";
-import dispatcher from "../dispatcher";
 
 import DailyStore from "../stores/DailyStore";
+import * as PlannerActions from "../actions/PlannerActions";
 
 export default class Planner extends React.Component {
   constructor(props) {
     super(props);
+    this.updateState = this.updateState.bind(this);
     this.state = {
       dailyPlanner: DailyStore.getDailyPlanner(),
     };
   }
-  updateState(data) {
-    this.setState.dailyPlanner = data;
+
+  componentWillMount() {
     console.log("This happened!");
+    DailyStore.on("change", this.updateState);
+  }
+
+  componentWillUnmount() {
+    console.log("umounted");
+    DailyStore.off("change", this.updateState);
+  }
+
+  updateState() {
+    this.setState.dailyPlanner = DailyStore.getDailyPlanner();
+    this.forceUpdate();
+    console.log("This happened!");
+    console.log(this.state.dailyPlanner);
   }
 
   render() {
@@ -21,7 +34,7 @@ export default class Planner extends React.Component {
 
     const DailyComponents = dailyPlanner.map(function(hour, index) {
       return (
-          <tr>
+          <tr className={dailyPlanner.taken}>
             <td key={index}>{hour.time}</td>
             <td>{hour.name}</td>
             <td>{hour.number}</td>

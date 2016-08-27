@@ -1,4 +1,26 @@
+
+.ModalDiv {
+  max-width: 100px;
+  width: 10%;
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+
 .modalTable {
   float: left;
-  width: auto;
+}
+
+.appTable {
+  display: inline-block;
+
+}
+
+.modalTable tr td {
+  border: 1px solid black;
+}
+
+.appTable tr td {
+  border: 1px solid black;
+  padding: 7px;
 }
