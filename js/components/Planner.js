@@ -2,6 +2,7 @@ import React from "react";
 
 import DailyStore from "../stores/DailyStore";
 import * as PlannerActions from "../actions/PlannerActions";
+import classNames from "classnames/bind";
 
 export default class Planner extends React.Component {
   constructor(props) {
@@ -13,28 +14,27 @@ export default class Planner extends React.Component {
   }
 
   componentWillMount() {
-    console.log("This happened!");
     DailyStore.on("change", this.updateState);
   }
 
-  componentWillUnmount() {
-    console.log("umounted");
-    DailyStore.off("change", this.updateState);
-  }
+  // componentWillUnmount() {
+  //   DailyStore.off("change", this.updateState);
+  // }
 
   updateState() {
     this.setState.dailyPlanner = DailyStore.getDailyPlanner();
     this.forceUpdate();
-    console.log("This happened!");
-    console.log(this.state.dailyPlanner);
   }
 
   render() {
     const { dailyPlanner } = this.state;
 
     const DailyComponents = dailyPlanner.map(function(hour, index) {
+      var tableClass = classNames({
+        'tableRowTaken': dailyPlanner[index].taken
+      });
       return (
-          <tr className={dailyPlanner.taken}>
+          <tr className={tableClass}>
             <td key={index}>{hour.time}</td>
             <td>{hour.name}</td>
             <td>{hour.number}</td>

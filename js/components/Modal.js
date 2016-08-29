@@ -33,7 +33,7 @@ export default class App extends React.Component {
   handleInputChange1(e) {
     var dailyP = this.state.dailyPlanner;
     dailyP[this.state.index].name = e.target.value;
-    dailyP[this.state.index].taken = false;
+    dailyP[this.state.index].taken = true;
     this.setState({dailPlanner: dailyP});
   }
   handleInputChange2(e) {
@@ -43,6 +43,16 @@ export default class App extends React.Component {
   }
   handleSaveClick() {
     PlannerActions.plannerModal(this.state.dailyPlanner);
+    this.hideModal();
+  }
+  handleCancelClick() {
+    var dailyP = this.state.dailyPlanner;
+    dailyP[this.state.index].name = "Appointment available";
+    dailyP[this.state.index].number = "Appointment available";
+    dailyP[this.state.index].taken = false;
+    PlannerActions.plannerModal(this.state.dailyPlanner);
+    this.hideModal();
+
   }
 
   render() {
@@ -74,9 +84,9 @@ export default class App extends React.Component {
               <ModalBody>
               <form>
                 <label htmlFor="name">Name</label><br />
-                <input type="text" id="name" value={dailyPlanner[this.state.index].name} onChange={this.handleInputChange1.bind(this)}/><br />
+                <input type="text" id="name" placeholder="Enter Name" value={dailyPlanner[this.state.index].name} onChange={this.handleInputChange1.bind(this)}/><br />
                 <label htmlFor="number">Number</label><br />
-                <input type="text" id="number" value={dailyPlanner[this.state.index].number} onChange={this.handleInputChange2.bind(this)}/>
+                <input type="text" id="number" placeholder="Enter Number" value={dailyPlanner[this.state.index].number} onChange={this.handleInputChange2.bind(this)}/>
               </form>
              </ModalBody>
              <ModalFooter>
@@ -86,6 +96,9 @@ export default class App extends React.Component {
                </button>
                <button className='btn btn-primary' onClick={this.handleSaveClick.bind(this)}>
                  Save changes
+               </button>
+               <button className='btn btn-primary' onClick={this.handleCancelClick.bind(this)}>
+                 Cancel Appt
                </button>
              </ModalFooter>
            </Modal>

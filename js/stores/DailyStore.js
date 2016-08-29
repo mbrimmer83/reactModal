@@ -6,15 +6,15 @@ class DailyStore extends EventEmitter {
   constructor() {
     super()
     this.dailyPlanner = [
-      {time: '9 am', name: 'Enter your name', number: 'Enter your number', taken: false},
-      {time: '10 am', name: 'Enter your name', number: 'Enter your number', taken: false},
-      {time: '11 am', name: 'Enter your name', number: 'Enter your number', taken: false},
-      {time: '12 pm', name: 'Enter your name', number: 'Enter your number', taken: false},
-      {time: '1 pm', name: 'Enter your name', number: 'Enter your number', taken: false},
-      {time: '2 pm', name: 'Enter your name', number: 'Enter your number', taken: false},
-      {time: '3 pm', name: 'Enter your name', number: 'Enter your number', taken: false},
-      {time: '4 pm', name: 'Enter your name', number: 'Enter your number', taken: false},
-      {time: '5 pm', name: 'Enter your name', number: 'Enter your number', taken: false}
+      {time: '9 am', name: 'Appointment available', number: 'Appointment available', taken: false},
+      {time: '10 am', name: 'Appointment available', number: 'Appointment available', taken: false},
+      {time: '11 am', name: 'Appointment available', number: 'Appointment available', taken: false},
+      {time: '12 pm', name: 'Appointment available', number: 'Appointment available', taken: false},
+      {time: '1 pm', name: 'Appointment available', number: 'Appointment available', taken: false},
+      {time: '2 pm', name: 'Appointment available', number: 'Appointment available', taken: false},
+      {time: '3 pm', name: 'Appointment available', number: 'Appointment available', taken: false},
+      {time: '4 pm', name: 'Appointment available', number: 'Appointment available', taken: false},
+      {time: '5 pm', name: 'Appointment available', number: 'Appointment available', taken: false}
     ];
   }
   // addDailyEvent()
