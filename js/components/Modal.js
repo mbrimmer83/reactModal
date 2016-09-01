@@ -66,6 +66,16 @@ export default class App extends React.Component {
       );
     }, this);
 
+      if (dailyPlanner[this.state.index].taken === false) {
+        var nameValue = '';
+      } else {
+        nameValue = dailyPlanner[this.state.index].name;
+      }
+      if (dailyPlanner[this.state.index].taken === false) {
+        var numberValue = '';
+      } else {
+        numberValue = dailyPlanner[this.state.index].number;
+      }
     return (
       <div className="ModalDiv">
       <tbody>
@@ -84,9 +94,9 @@ export default class App extends React.Component {
               <ModalBody>
               <form>
                 <label htmlFor="name">Name</label><br />
-                <input type="text" id="name" placeholder="Enter Name" value={dailyPlanner[this.state.index].name} onChange={this.handleInputChange1.bind(this)}/><br />
+                <input type="text" id="name" placeholder="Enter Name" value={nameValue} onChange={this.handleInputChange1.bind(this)}/><br />
                 <label htmlFor="number">Number</label><br />
-                <input type="text" id="number" placeholder="Enter Number" value={dailyPlanner[this.state.index].number} onChange={this.handleInputChange2.bind(this)}/>
+                <input type="text" id="number" placeholder="Enter Number" value={numberValue} onChange={this.handleInputChange2.bind(this)}/>
               </form>
              </ModalBody>
              <ModalFooter>
