@@ -71,7 +71,7 @@ export default class App extends React.Component {
       } else {
         nameValue = dailyPlanner[this.state.index].name;
       }
-      if (dailyPlanner[this.state.index].taken === false) {
+      if (dailyPlanner[this.state.index].taken === false || dailyPlanner[this.state.index].number === "Appointment available") {
         var numberValue = '';
       } else {
         numberValue = dailyPlanner[this.state.index].number;

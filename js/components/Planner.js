@@ -22,7 +22,7 @@ export default class Planner extends React.Component {
   // }
 
   updateState() {
-    this.setState({dailyPlanner: DailyStore.getDailyPlanner()});
+    this.setState();
   }
 
   render() {
