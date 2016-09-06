@@ -67,14 +67,14 @@ export default class App extends React.Component {
     }, this);
 
       if (dailyPlanner[this.state.index].taken === false) {
-        var nameValue = '';
+        var plannerNameValue = '';
       } else {
-        nameValue = dailyPlanner[this.state.index].name;
+        plannerNameValue = dailyPlanner[this.state.index].name;
       }
       if (dailyPlanner[this.state.index].taken === false || dailyPlanner[this.state.index].number === "Appointment available") {
-        var numberValue = '';
+        var plannerNumberValue = '';
       } else {
-        numberValue = dailyPlanner[this.state.index].number;
+        plannerNumberValue = dailyPlanner[this.state.index].number;
       }
     return (
       <div className="ModalDiv">
@@ -94,9 +94,9 @@ export default class App extends React.Component {
               <ModalBody>
               <form>
                 <label htmlFor="name">Name</label><br />
-                <input type="text" id="name" placeholder="Enter Name" value={nameValue} onChange={this.handleInputChange1.bind(this)}/><br />
+                <input type="text" id="name" placeholder="Enter Name" value={plannerNameValue} onChange={this.handleInputChange1.bind(this)}/><br />
                 <label htmlFor="number">Number</label><br />
-                <input type="text" id="number" placeholder="Enter Number" value={numberValue} onChange={this.handleInputChange2.bind(this)}/>
+                <input type="text" id="number" placeholder="Enter Number" value={plannerNumberValue} onChange={this.handleInputChange2.bind(this)}/>
               </form>
              </ModalBody>
              <ModalFooter>
